@@ -10,7 +10,7 @@ router.post("/login",auth.dataCompare)
 
 router.post("/user",auth.getData)
 
-router.patch("/useredit", auth.editUser)
+router.put("/useredit", auth.editUser)
 
 
 
