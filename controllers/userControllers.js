@@ -84,8 +84,23 @@ const dataDbSave = async (req,res) =>{
     try {
 
         console.log("edit user",req.body);
-        const {email} = req.body
+        const {email,older_email,name} = req.body
 
+        const user = await User.updateOne(
+            {email:older_email},
+            {
+                $set:
+                {
+                    email:email,
+                    name:name
+                }
+            }
+        )
+
+        res.status(200).json({msg:"data updated..."})
+
+
+         
         
     } catch (error) {
         console.log(error);
