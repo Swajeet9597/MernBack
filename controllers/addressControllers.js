@@ -42,4 +42,21 @@ const postAdd = async(req,res)=>{
     }
 }
 
-module.exports = {getAdd,postAdd}
+const deleteAdd = async(req,res) =>{
+    try {
+        const {_id} = req.body
+
+        const result = await Address.deleteOne({_id:_id})
+
+        if(result){
+            res.status(200).json({msg:"done..."})
+        }
+      
+
+
+    } catch (error) {
+        
+    }
+}
+
+module.exports = {getAdd,postAdd,deleteAdd}
