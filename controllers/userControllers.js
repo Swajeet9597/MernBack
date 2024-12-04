@@ -84,6 +84,22 @@ const dataDbSave = async (req,res) =>{
     try {
 
         console.log("edit user",req.body);
+        const {email} = req.body
+
+        // const user = await User.updateOne( 
+        //     { email: email }, 
+        //     {
+        //       $set: 
+        //         {
+        //           title: "Post Title 5",
+        //           body: "Body of post.",
+        //           category: "Event",
+        //           likes: 5,
+        //           tags: ["news", "events"],
+        //           date: Date()
+        //         }
+        //     }
+        //   )
         
     } catch (error) {
         console.log(error);
