@@ -8,6 +8,8 @@ router.post("/signup", auth.dataDbSave)
 
 router.post("/login",auth.dataCompare)
 
+router.post("/user",auth.getData)
+
 
 
 

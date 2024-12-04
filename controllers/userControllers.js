@@ -65,4 +65,19 @@ const dataDbSave = async (req,res) =>{
      
  }   
 
-module.exports = {dataDbSave, dataCompare} 
+ const getData = async(req,res) =>{
+    try {
+        const {email} = req.body;
+
+    console.log(email)
+
+    const user = await User.findOne({email})
+
+    res.status(200).json({msg:user})
+    } catch (error) {
+        console.log(error)
+    }
+    
+ }
+
+module.exports = {dataDbSave, dataCompare, getData} 
