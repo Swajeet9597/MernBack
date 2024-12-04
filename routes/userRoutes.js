@@ -10,7 +10,7 @@ router.post("/login",auth.dataCompare)
 
 router.post("/user",auth.getData)
 
-router.post("/useredit", auth.editUser)
+router.put("/useredit", auth.editUser)
 
 
 
