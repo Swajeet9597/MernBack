@@ -11,7 +11,7 @@ const orderRouter = require("./routes/addressRoutes")
 const cors = require("cors");
 
 const corsOption = {
-    origin: "https://mern-front-xi.vercel.app/",
+    origin: "https://mern-front-xi.vercel.app",
     methods: "GET, POST, PUT, DELETE, PATCH, HEAD",
     credentials: true,
 }
