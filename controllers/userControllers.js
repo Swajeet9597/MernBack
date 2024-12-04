@@ -80,4 +80,14 @@ const dataDbSave = async (req,res) =>{
     
  }
 
-module.exports = {dataDbSave, dataCompare, getData} 
+ const editUser = async(req,res)=>{
+    try {
+
+        console.log("edit user",req.body);
+        
+    } catch (error) {
+        console.log(error);
+    }
+ }
+
+module.exports = {dataDbSave, dataCompare, getData,editUser} 
