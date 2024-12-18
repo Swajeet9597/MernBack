@@ -85,7 +85,7 @@ const dataDbSave = async (req,res) =>{
     }
     
     else{
-        return res.status(400).json({msg:"Invalid Email or password!"})
+        return res.status(400).json({msg:"Invalid Email or password !"})
     }
     } catch (error) {
         console.log(error)
