@@ -79,6 +79,9 @@ const dataDbSave = async (req,res) =>{
 
         return res.cookie("token",token,tokenOption).status(200).json({msg:"User log in...", data: token, success:true})
 
+        // console.log(res.getHeaders()['set-cookie']);
+
+
     }
     
     else{
