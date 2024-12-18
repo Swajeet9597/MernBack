@@ -39,6 +39,13 @@ const dataDbSave = async (req,res) =>{
     }
 
 
+
+
+
+
+
+
+
  const dataCompare = async(req,res) =>{
 
     try {
@@ -56,17 +63,25 @@ const dataDbSave = async (req,res) =>{
      let passCheck = await bcrypt.compare(password, userExists.password)
 
      if(passCheck){
+
         const tokenData = {
             _id : userExists._id,
             email : userExists.email
         }
+
         const token = await jwt.sign(tokenData, 'qwerddgfbgfjfghfgsdbgtre', { expiresIn: 60 * 60 * 1 });
+
         const tokenOption = {
             httpOnly :true,
+            sameSite: "none",
             secure: true
         }
+
         return res.cookie("token",token,tokenOption).status(200).json({msg:"User log in...", data: token, success:true})
-    }else{
+
+    }
+    
+    else{
         return res.status(400).json({msg:"Email or password are not matched !"})
     }
     } catch (error) {
@@ -74,6 +89,14 @@ const dataDbSave = async (req,res) =>{
     }
      
  }   
+
+
+
+
+
+
+
+
 
  const getData = async(req,res) =>{
     try {
