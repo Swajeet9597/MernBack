@@ -77,7 +77,7 @@ const dataDbSave = async (req,res) =>{
             secure: true
         }
 
-        return res.cookie("tokenn",token,tokenOption).status(200).json({msg:"User log in...", data: token, success:true})
+        return res.cookie("token",token,tokenOption).status(200).json({msg:"User log in...", data: token, success:true})
 
     }
     
