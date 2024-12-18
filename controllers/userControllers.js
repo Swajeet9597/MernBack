@@ -1,6 +1,7 @@
 
 const bcrypt = require("bcryptjs")
 const User = require("../models/userModel")
+const jwt = require('jsonwebtoken');
 
 
 
@@ -55,9 +56,18 @@ const dataDbSave = async (req,res) =>{
      let passCheck = await bcrypt.compare(password, userExists.password)
 
      if(passCheck){
-        return res.status(200).json({msg:"user details are matched"})
+        const tokenData = {
+            _id : userExists._id,
+            email : userExists.email
+        }
+        const token = await jwt.sign(tokenData, 'qwerddgfbgfjfghfgsdbgtre', { expiresIn: 60 * 60 * 1 });
+        const tokenOption = {
+            httpOnly :true,
+            secure: true
+        }
+        return res.cookie("token",token,tokenOption).status(200).json({msg:"User log in...", data: token})
     }else{
-        return res.status(400).json({msg:"user details are not matched"})
+        return res.status(400).json({msg:"Email or password are not matched !"})
     }
     } catch (error) {
         console.log(error)
