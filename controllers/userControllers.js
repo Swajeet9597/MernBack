@@ -65,7 +65,7 @@ const dataDbSave = async (req,res) =>{
             httpOnly :true,
             secure: true
         }
-        return res.cookie("token",token,tokenOption).status(200).json({msg:"User log in...", data: token})
+        return res.cookie("token",token,tokenOption).status(200).json({msg:"User log in...", data: token, success:true})
     }else{
         return res.status(400).json({msg:"Email or password are not matched !"})
     }
