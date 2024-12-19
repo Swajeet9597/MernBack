@@ -4,7 +4,7 @@ const userDetails = async(req,res)=>{
         console.log("ssssssssssggggggg")
         const token = req.token;
         res.status(201).json({
-            msg:"correct-----",
+            msg:"correct++++",
             data: token
         })
     } catch (error) {
