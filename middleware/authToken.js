@@ -2,7 +2,15 @@
 const authToken = async(req,res,next)=>{
    try {
        
-        const token = req.cookies?.token || req.header
+        const token = req.cookies?.token 
+
+        // if(!token){
+        //     return res.status(400).json({
+        //         msg:"User is not log in",
+        //         error:true,
+        //         success: false
+        //     })
+        // }
 
         console.log("token",token)
 
