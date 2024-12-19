@@ -1,8 +1,14 @@
-const jwt = require("jsonwebtoken")
+const User = require("../models/userModel")
+
+
+
 const userDetails = async(req,res)=>{
     try {
         console.log("ssssssssssggggggg")
-        const user = req.user;
+        const userID = req.user;
+
+        const user = await User.findById(userID)
+
         res.status(201).json({
             msg:"correct++++",
             data: user
