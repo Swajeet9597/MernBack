@@ -17,12 +17,18 @@ const authToken = async(req,res,next)=>{
 
         console.log("token",token)
 
-        // jwt.verify(token,'qwerddgfbgfjfghfgsdbgtre', function(err,decoded){
-        //      console.log(err);
-        //      console.log("decoded",decoded);
-        // })
+        jwt.verify(token, 'qwerddgfbgfjfghfgsdbgtre', (err, decoded) => {
+            if (err) {
+                console.error("JWT Error:", err);
+            }
+            
+            req.user = decoded?._id
 
-        next()
+            next()
+
+        });
+
+        
 
 
    } catch (error) {

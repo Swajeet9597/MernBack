@@ -69,7 +69,7 @@ const dataDbSave = async (req,res) =>{
             email : userExists.email
         }
 
-        const token = await jwt.sign(tokenData, 'qwerddgfbgfjfghfgsdbgtre', { expiresIn: 60 * 60 * 1 });
+        const token = await jwt.sign(tokenData, 'qwerddgfbgfjfghfgsdbgtre', { expiresIn: 60 * 60 * 8 });
 
         const tokenOption = {
             httpOnly :true,
