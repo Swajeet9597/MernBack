@@ -56,8 +56,6 @@ const authToken = async (req, res, next) => {
             });
         }
 
-        // Attach token data to the request
-        req.token = token;
 
         // Verify JWT token
         jwt.verify(token, 'qwerddgfbgfjfghfgsdbgtre', (err, decoded) => {
