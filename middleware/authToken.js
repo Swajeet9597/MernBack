@@ -2,7 +2,7 @@
 const authToken = async(req,res,next)=>{
    try {
        
-        // const token = req.cookies?.token || req.header
+        const token = req.cookies?.token || req.header
 
         // console.log("token",req.cookies)
 
