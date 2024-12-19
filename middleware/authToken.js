@@ -2,9 +2,14 @@
 const authToken = async(req,res,next)=>{
    try {
        
-        // const token = req.cookies?.token
+        const token = req.cookies?.token
 
-        console.log("token",req.cookies)
+        // console.log("token",req.cookies)
+
+        jwt.verify(token,'qwerddgfbgfjfghfgsdbgtre', function(err,decoded){
+             console.log(err);
+             console.log("decoded",decoded);
+        })
 
         next()
 
