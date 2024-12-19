@@ -12,6 +12,9 @@ const authToken = async(req,res,next)=>{
             })
         }
 
+         // Attach data to req
+          req.token = token;
+
         console.log("token",token)
 
         // jwt.verify(token,'qwerddgfbgfjfghfgsdbgtre', function(err,decoded){
