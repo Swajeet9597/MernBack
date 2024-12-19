@@ -10,6 +10,7 @@ const productRouter = require("./routes/productRoutes")
 const cartRouter = require("./routes/cartRoutes")
 const orderRouter = require("./routes/addressRoutes")
 const cardRouter = require("./routes/cardRoutes")
+const userDetails = require("./routes/userDetailsRoute")
 
 const cors = require("cors");
 
@@ -31,6 +32,7 @@ app.use("/api/data/", productRouter);
 app.use("/api/product/", cartRouter);
 app.use("/api/order/", orderRouter);
 app.use("/api/card/", cardRouter);
+app.use("api/user/",userDetails)
 
 
 connectDB(); 
