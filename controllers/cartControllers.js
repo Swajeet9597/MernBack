@@ -2,7 +2,7 @@ const Cart = require("../models/userCart")
 
 const postCart = async(req,res) =>{
     const {title,price} = req.body;
-    const {userId} = req.user;
+    const userId = req.user;
     
     // console.log("reqbody",price)
 
