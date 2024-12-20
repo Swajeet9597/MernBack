@@ -6,7 +6,7 @@ const postCart = async(req,res) =>{
     
     // console.log("reqbody",price)
 
-    let cart = new Cart({title:title, price:price,userId:userId})
+    let cart = new Cart({title:title, price:price, userId:userId})
 
     res.status(201).json({msg:"done.."})
 
