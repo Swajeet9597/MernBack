@@ -8,6 +8,10 @@ const cartSchema = new mongoose.Schema({
     price:{
         type:String,
         require:true
+    },
+    userId:{
+        type:String,
+        require:true
     }
 })
 

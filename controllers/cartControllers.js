@@ -2,10 +2,11 @@ const Cart = require("../models/userCart")
 
 const postCart = async(req,res) =>{
     const {title,price} = req.body;
+    const {userId} = req.user;
     
     // console.log("reqbody",price)
 
-    let cart = new Cart({title:title, price:price})
+    let cart = new Cart({title:title, price:price,userId:userId})
 
     res.status(201).json({msg:"done.."})
 
