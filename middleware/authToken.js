@@ -4,7 +4,7 @@ const jwt = require('jsonwebtoken');
 const authToken = async (req, res, next) => {
     try {
         // Get token from cookies or headers
-        const token = req.cookies?.token || req.headers.authorization?.split(" ")[1]; // Common format "Bearer <token>"
+        const token = req.cookies?.token || req.headers.authorization?.split(" ")[1];
 
         if (!token) {
             return res.status(400).json({
@@ -14,7 +14,7 @@ const authToken = async (req, res, next) => {
             });
         }
 
-
+        
         // Verify JWT token
         jwt.verify(token, 'qwerddgfbgfjfghfgsdbgtre', (err, decoded) => {
             if (err) {
@@ -36,6 +36,8 @@ const authToken = async (req, res, next) => {
             error: true
         });
     }
+
+    
 };
 
 module.exports = authToken;

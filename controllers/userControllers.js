@@ -95,11 +95,15 @@ const dataDbSave = async (req,res) =>{
 
 
 
+const checkLogin = async(req,res)=>{
+    try {
+        
+        res.status(200)
 
-
-
-
-
+    } catch (error) {
+        console.log(error);
+    }
+}
 
 
 
@@ -146,4 +150,4 @@ const dataDbSave = async (req,res) =>{
     }
  }
 
-module.exports = {dataDbSave, dataCompare, getData,editUser} 
+module.exports = {checkLogin,dataDbSave, dataCompare, getData,editUser} 
